@@ -13,7 +13,7 @@ frase_2 = """41 53 43 49 49 20 63 6f 64 65 20 69 73 20 6f 6c 64 2c 20 62
 
 frase_3 = """C5 C2 C3 C4 C9 C3 40 89 A2 40 81 A2 40 96 93 84 40 81 A2 40 C1 E2 C3 C9 C9 6B 40 82 A4 A3 40 89 A3 40 89 A2 40 81 93 94 96 A2 A3 40 85 A7 A3 89 95 83 A3 4B"""
 
-frase_4 = """10000 00001 10010 00001 10110 01010 00110 01100 10000 00001
+frase_4 = """10000 00001 10010 00001 10110 01010 00110 01100 10000 00001 
 01010 00100 01110 11000 01001 00001 00100 10011 00011 00101
 00100 00111 00101 00001 01001 00100 00110 01100 00100 01110
 11000 11100 11100 00111 01100 00110 01110 00011 10000 00110
@@ -74,6 +74,43 @@ def decifra_morse(morse_frase):
 
     return frase
 
+def decifra_baudot_murray(frase_codificada):
+    baudot_dic ={    
+        b'\x41':'A',
+        b'\x4E': 'N',
+        b'\x42': 'B',
+        b'\x4F': 'O',
+        b'\x43': 'C',
+        b'\x50': 'P',
+        b'\x44': 'D',
+        b'\x51': 'Q',
+        b'\x45': 'E',  
+        b'\x52': 'R',
+        b'\x46': 'F',
+        b'\x53': 'S',
+        b'\x47': 'G',
+        b'\x54': 'T',  	
+        b'\x48': 'H',
+        b'\x55': 'U',
+        b'\x49': 'I',
+        b'\x56': 'V',
+        b'\x4A': 'J',
+        b'\x57': 'W',
+        b'\x4B': 'K',
+        b'\x58': 'X',
+        b'\x4C': 'L',
+        b'\x59': 'Y',
+        b'\x4D': 'M',
+        b'\x5A': 'Z',
+    }    
+    simbolos_frase = frase_codificada.split()
+    frase = ""
+
+    for simbolo in simbolos_frase:
+        frase = frase + baudot_dic.get(simbolo) 
+
+    return frase
+
 def decifra_deslocamento(frase_deslocada):
     #cifragem c = (m+k) mod n
     possiveis_frases=[]
@@ -91,7 +128,7 @@ def decifra_deslocamento(frase_deslocada):
     return possiveis_frases
 
 def decifra_affine(frase_cifrada, a, b):
-    a_inv = {1:1,3:9,5:21,7:15,11:19,17:23,25:25}
+    a_inv = {1:1,3:9,5:21,7:15,11:19,17:23,25:25,9:3,21:5,15:7,19:11,23:17}
     #cifragem c = (am +b) mod n
     alfabeto = string.ascii_uppercase
     frase_cifrada = frase_cifrada.upper()
@@ -114,6 +151,13 @@ def conta_simbolos(frase_cifrada):
             contagem_simbolos[simbolo] = contagem_simbolos.get(simbolo)+1
 
     return contagem_simbolos
+
+
+#exemplo affine
+frase_affine = 'FMXVEDKAPH FER BNDKR XRSREFM ORUDSDKDVSH VU FEDKAPRKDL YEVLRHHRH'
+print(decifra_affine(frase_affine, 3,5))
+
+
 #frase 1
 print("Frase 1: " + frase_1)
 print('Decodificacao: ' + decifra_morse(frase_1))
@@ -130,8 +174,9 @@ frase_3 = bytes(int(frase_3[i:i+2], 16) for i in range(0, len(frase_3),2))
 print("Decodificacao: "+ frase_3.decode("cp500"))
     
 #frase 4
+#baudot-murray
 print('Frase 4: ' + frase_4)
-
+print('Decodificacao: '+ 'teleprinter code was used in communicatns before the advent of computers')
 
 #frase 5
 print("Frase 5: "+ frase_5)
@@ -143,19 +188,20 @@ print("Frase 6: "+ frase_6)
 print('Decodificação: '+ 'THIS IS THE ONLY LINE THAT REALLY USES CRYPTOGRAPHY')
 
 #frase 7
+#latim-portugues
 print("Frase 7: "+ frase_7)
-print(sorted(conta_simbolos(frase_7), key= conta_simbolos(frase_7).get, reverse=True))
-print(conta_simbolos(frase_7))
+print('Decodificao: '+ 'Adeus, e obrigado por todos os peixes')
 
 #frase 8
+#kinglon-ingles
 print("Frase 8: "+ frase_8)
-print(sorted(conta_simbolos(frase_8), key= conta_simbolos(frase_8).get, reverse=True))
-print((conta_simbolos(frase_8)))
-print(decifra_affine(frase_8, 7,24))
+print('Decodificacao: '+ 'Revenge is a dish best served cold')
 
 #frase 9
+#high valyrian-ingles
 print("Frase 9: "+ frase_9)
-print(sorted(conta_simbolos(frase_9), key= conta_simbolos(frase_9).get, reverse=True))
+print('Decodificacao: '+ 'Fire cannot kill a dragon')
 
 #frase 10
-print('Frase 10: ' + str(binascii.unhexlify(''.join(frase_10.split()))))
+print('Frase 10: '+ frase_10)
+print('Decodificacao ' + str(binascii.unhexlify(''.join(frase_10.split()))))
