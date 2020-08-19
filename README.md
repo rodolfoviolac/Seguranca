@@ -77,7 +77,7 @@ C1 E2 C3 C9 C9 6B 40 82 A4 A3 40 89 A3 40 89 A2 40 81 93 94
 
 ### Décima frase
 
-![QRCODE IMG](https://i.imgur.com/fg6J12N.png)
+>![QRCODE IMG](https://i.imgur.com/fg6J12N.png)
 
 **TEXTO PURO**: Identify and read QR code is easy, but now you must decode this: **43 6f 64 65 73 20 77 69 74 68 6f 75 74 20 61 20 73 65 63 72 65 74 20 6b 65 79 20 63 61 6e 20 62 65 20 65 61 73 69 6c 79 20 64 65 63 6f 64 65 64 20 69 66 20 79 6f 75 20 6b 6e 6f 77 20 74 68 65 20 65 6e 63 6f 64 69 6e 67 20 70 72 6f 63 65 73 73 2e**
 
