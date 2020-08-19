@@ -1,0 +1,84 @@
+# INF01045 - Segurança Em Sistemas De Computação
+
+## Desafio 1
+
+Cada uma das linhas a seguir foi escrita de uma maneira distinta das demais. Você deve
+identificar qual método foi usado para cada linha, e recuperar a frase original. Para esse
+desafio ser considerado como realizado, você deve decodificar no mínimo 8 das 10
+frases.
+
+### Primeira frase
+
+>-.-. --- -.. .. --. --- -- --- .-. ... . . .... ..-. .-
+-.-. .. .-.. -.. . .-. . -.-. --- -. .... . -.-. . .-.
+
+**MORSE**: CODIGOMORSEEHFACILDERECONHECER
+
+### Segunda frase
+
+>41 53 43 49 49 20 63 6f 64 65 20 69 73 20 6f 6c 64 2c 20 62
+75 74 20 73 74 69 6c 6c 20 77 69 64 65 6c 79 20 75 73 65 64
+2e 20 48 6f 77 65 76 65 72 2c 20 74 68 65 20 6e 65 78 74 20
+74 77 6f 20 70 68 72 61 73 65 73 20 61 72 65 20 6f 6c 64 65
+72 20 74 68 61 6e 20 41 53 43 49 49 21
+
+**ASCII**: ASCII code is old, but still widely used. However, the next two phrases are older than ASCII!
+
+### Terceira frase
+
+> C5 C2 C3 C4 C9 C3 40 89 A2 40 81 A2 40 96 93 84 40 81 A2 40
+C1 E2 C3 C9 C9 6B 40 82 A4 A3 40 89 A3 40 89 A2 40 81 93 94
+96 A2 A3 40 85 A7 A3 89 95 83 A3 4B
+
+**EBCDIC**: EBCDIC is as old as ASCII, but it is almost extinct.
+
+### Quarta frase
+
+>10000 00001 10010 00001 10110 01010 00110 01100 10000 00001
+01010 00100 01110 11000 01001 00001 00100 10011 00011 00101
+00100 00111 00101 00001 01001 00100 00110 01100 00100 01110
+11000 11100 11100 00111 01100 00110 01110 00011 10000 00110
+11000 01100 00101 00100 11001 00001 01101 11000 01010 00001
+00100 10000 10100 00001 00100 00011 01001 11110 00001 01100
+10000 00100 11000 01101 00100 01110 11000 11100 10110 00111
+10000 00001 01010 00101
+
+**BAUDOT-MURRAY**: teleprinter code was used in communicatns before the advent of computers
+
+### Quinta frase
+
+>QmFzZSA2NCBjYW4gYmUgdXNlZCB0byBlbmNvZGUgZS1tYWlsIGF0dGFjaG1lbnRzLg==
+
+**BASE 64**: Base 64 can be used to encode e-mail attachments.
+
+### Sexta frase
+
+>WKLV LV WKH RQOB OLQH WKDW UHDOOB XVHV FUBSWRJUDSKB
+
+**DESLOCAMENTO**: THIS IS THE ONLY LINE THAT REALLY USES CRYPTOGRAPHY
+
+### Sétima frase
+
+>vale, et pro piscibus omnibus gratias ago
+
+**LATIM**: Adeus, e obrigado por todos os peixes
+
+### Oitava frase
+
+>bortaS bIr jablu'DI' reH QaQqu' nay
+
+**KINGLON**: Revenge is a dish best served cold
+
+### Nona frase
+
+>Perzys zaldrīzi sēnagon kostos daor
+
+**ALTO VALIRIANO**: Fire cannot kill a dragon
+
+### Décima frase
+
+![QRCODE IMG](https://i.imgur.com/fg6J12N.png)
+
+**TEXTO PURO**: Identify and read QR code is easy, but now you must decode this: **43 6f 64 65 73 20 77 69 74 68 6f 75 74 20 61 20 73 65 63 72 65 74 20 6b 65 79 20 63 61 6e 20 62 65 20 65 61 73 69 6c 79 20 64 65 63 6f 64 65 64 20 69 66 20 79 6f 75 20 6b 6e 6f 77 20 74 68 65 20 65 6e 63 6f 64 69 6e 67 20 70 72 6f 63 65 73 73 2e**
+
+**BINÁRIO**: Codes without a secret key can be easily decoded if you know the encoding process.

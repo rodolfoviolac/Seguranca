@@ -157,51 +157,60 @@ def conta_simbolos(frase_cifrada):
 frase_affine = 'FMXVEDKAPH FER BNDKR XRSREFM ORUDSDKDVSH VU FEDKAPRKDL YEVLRHHRH'
 print(decifra_affine(frase_affine, 3,5))
 
+if __name__ == "__main__":
+        
+    #frase 1
+    print("[*] Frase 1: " + frase_1)
+    print('Decodificacao: ' + decifra_morse(frase_1))
+    print("******************************************************")
 
-#frase 1
-print("Frase 1: " + frase_1)
-print('Decodificacao: ' + decifra_morse(frase_1))
+    #frase 2
+    print("Frase 2: " + frase_2)
+    print('Decodificacao: ' + str(binascii.unhexlify(''.join(frase_2.split()))))        
+    print("******************************************************")
 
-#frase 2
-print("Frase 2: " + frase_2)
-print('Decodificacao: ' + str(binascii.unhexlify(''.join(frase_2.split()))))        
+    #frase 3
+    #EBCDIC
+    print("Frase 3: "+ frase_3)
+    frase_3 = ''.join(frase_3.split())
+    frase_3 = bytes(int(frase_3[i:i+2], 16) for i in range(0, len(frase_3),2))
+    print("Decodificacao: "+ frase_3.decode("cp500"))
+    print("******************************************************")
 
-#frase 3
-#EBCDIC
-print("Frase 3: "+ frase_3)
-frase_3 = ''.join(frase_3.split())
-frase_3 = bytes(int(frase_3[i:i+2], 16) for i in range(0, len(frase_3),2))
-print("Decodificacao: "+ frase_3.decode("cp500"))
+    #frase 4
+    #baudot-murray
+    print('Frase 4: ' + frase_4)
+    print('Decodificacao: '+ 'teleprinter code was used in communicatns before the advent of computers')
+    print("******************************************************")
     
-#frase 4
-#baudot-murray
-print('Frase 4: ' + frase_4)
-print('Decodificacao: '+ 'teleprinter code was used in communicatns before the advent of computers')
+    #frase 5
+    print("Frase 5: "+ frase_5)
+    print("Decodificacao: "+ str(base64.b64decode(frase_5)))
+    print("******************************************************")
 
-#frase 5
-print("Frase 5: "+ frase_5)
-print("Decodificacao: "+ str(base64.b64decode(frase_5)))
+    #frase 6
+    print("Frase 6: "+ frase_6)
+    #print(decifra_deslocamento(frase_6))
+    print('Decodificação: '+ 'THIS IS THE ONLY LINE THAT REALLY USES CRYPTOGRAPHY')
+    print("******************************************************")
 
-#frase 6
-print("Frase 6: "+ frase_6)
-#print(decifra_deslocamento(frase_6))
-print('Decodificação: '+ 'THIS IS THE ONLY LINE THAT REALLY USES CRYPTOGRAPHY')
+    #frase 7
+    #latim-portugues
+    print("Frase 7: "+ frase_7)
+    print('Decodificao: '+ 'Adeus, e obrigado por todos os peixes')
+    print("******************************************************")
+    #frase 8
+    #kinglon-ingles
+    print("Frase 8: "+ frase_8)
+    print('Decodificacao: '+ 'Revenge is a dish best served cold')
+    print("******************************************************")
 
-#frase 7
-#latim-portugues
-print("Frase 7: "+ frase_7)
-print('Decodificao: '+ 'Adeus, e obrigado por todos os peixes')
+    #frase 9
+    #high valyrian-ingles
+    print("Frase 9: "+ frase_9)
+    print('Decodificacao: '+ 'Fire cannot kill a dragon')
+    print("******************************************************")
 
-#frase 8
-#kinglon-ingles
-print("Frase 8: "+ frase_8)
-print('Decodificacao: '+ 'Revenge is a dish best served cold')
-
-#frase 9
-#high valyrian-ingles
-print("Frase 9: "+ frase_9)
-print('Decodificacao: '+ 'Fire cannot kill a dragon')
-
-#frase 10
-print('Frase 10: '+ frase_10)
-print('Decodificacao ' + str(binascii.unhexlify(''.join(frase_10.split()))))
+    #frase 10
+    print('Frase 10: '+ frase_10)
+    print('Decodificacao ' + str(binascii.unhexlify(''.join(frase_10.split()))))
