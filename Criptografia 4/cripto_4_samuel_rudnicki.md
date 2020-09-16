@@ -151,6 +151,12 @@ C6| A8 1B 89 BB EF A6 E0 42
 
 #### 4. Decriptografe o texto cifrado resultante. Qual a mensagem obtida? Explique.
 
+>Tom's salary is $25000--Bob's salary is $15000.
+
+O modo de criptografia ECB criptografa cada bloco da mensagem separadamente, logo, a troca de posições entre blocos afeta apenas a sequência das palavras na mensagem.
+
+#### 5. Repita os passos 1-4, porém com DES (CBC). Compare os resultados. Explique
+
 #### Encriptação
 
 >AE 46 F7 21 FE D4 E8 28 97 5F FB A8 24 07 9D A0 37 6A E0 93 89 D8 0D 4C 8C 99 36 C3 83 B8 81 A9 D4 70 C3 E2 D9 C4 66 C5 C9 AF 33 4A 5E 8D 48 44
